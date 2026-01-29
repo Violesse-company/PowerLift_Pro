@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>1RM推定ツール</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>1RM 推定</h1>
+
+    <div class="input-group">
+      <label>セット重量 (kg)</label>
+      <input type="number" id="setWeightInput" min="0" max="500" step="2.5" inputmode="decimal" pattern="[0-9]*">
+    </div>
+
+    <div class="input-group">
+      <label>回数 (reps)</label>
+      <input type="number" id="repsInput" min="1" max="15" step="1" inputmode="numeric" pattern="[0-9]*">
+    </div>
+
+    <div class="input-group">
+      <label>痛み度 (%)</label>
+      <input type="number" id="painInput" min="0" max="100" step="1" value="0" inputmode="numeric" pattern="[0-9]*">
+    </div>
+
+    <div class="pain-guide">
+      <p><strong>痛み度の目安</strong></p>
+      <ul>
+        <li>0〜30%：ほぼ痛くない</li>
+        <li>31〜60%：ズキズキ、痛みがある</li>
+        <li>61〜100%：骨折・剥離骨折レベル</li>
+        <li>お尻を付けた状態のセット重量です</li>
+        <li>MAXの重量はお尻を付けた状態です</li>
+      </ul>
+    </div>
+
+    <div class="input-group">
+      <label>元気度 (%)</label>
+      <input type="number" id="energyInput" min="50" max="100" step="1" value="100" inputmode="numeric" pattern="[0-9]*">
+    </div>
+
+    <button id="calcBtn">計算</button>
+  </div>
+
+  <!-- 結果ポップアップ -->
+  <div id="resultOverlay" class="overlay hidden">
+    <div class="popup">
+      <h2>結果</h2>
+
+      <div class="row"><span>推定1RM</span><strong id="rmValue"></strong></div>
+      <div class="row"><span>安全重量 (90%)</span><strong id="safeValue"></strong></div>
+      <div class="row"><span>勝負重量 (95%)</span><strong id="challengeValue"></strong></div>
+      <div class="row"><span>今日の上限</span><strong id="todayValue"></strong></div>
+
+      <button id="closeBtn">閉じる</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

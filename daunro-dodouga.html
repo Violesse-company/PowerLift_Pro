@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>動画コントロール付き</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+      font-family: sans-serif;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ボタンのスタイル */
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+  </style>
+</head>
+<body>
+
+  <video id="myVideo" autoplay muted loop>
+    <source src="copy_84B3A6C9-40B1-4256-9F0C-B9623BC1192E (video-converter.com).mp4" type="video/mp4">
+    お使いのブラウザは動画に対応していません。
+  </video>
+
+  <!-- ボタン -->
+  <div class="controls">
+    <button onclick="playVideo()">再生</button>
+    <button onclick="pauseVideo()">停止</button>
+    <!-- 戻るボタンをリンクに変更 -->
+    <button onclick="goBack()">戻る</button>
+  </div>
+
+  <script>
+    const video = document.getElementById('myVideo');
+
+    function playVideo() {
+      video.play();
+    }
+
+    function pauseVideo() {
+      video.pause();
+    }
+
+    function goBack() {
+      window.location.href = 'PowerLift_pro.html#faq';
+    }
+  </script>
+
+</body>
+</html>
