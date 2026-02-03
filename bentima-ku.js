@@ -26,6 +26,20 @@ const userData = {
     mealAmount: 2,
     focus: 2
   },
+    220: {
+    height: 160,
+    bodyWeight: 67,
+    max: 0,
+    setWeight: 140,
+    reps: 5,
+    energy: 100,
+    pain: 0,
+    sleep: 6,
+    meals: { morning: 0, noon: 1, evening: 1, midnight: 0 },
+    mealAmount: 2,
+    focus: 3
+  },
+  
 };
 
 /* ===== 要素取得 ===== */
